@@ -1,252 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700,800');
-
-/* RESET */
-* {
-  box-sizing: border-box;
-}
-
-/* BODY */
 body {
+  background: #111125;
+  color: #e2e0fc;
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  font-family: 'Raleway', sans-serif;
-  background: #2c3440;
-  color: white;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  /* min-height: 100vh; */
-  padding: 40px 15px;
 }
 
-/* TITULO */
-h1 {
-  margin-bottom: 30px;
-  font-size: 32px;
-  text-align: center;
-}
-
-h1 span {
-  color: #ffa502;
+h1, h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .title-link {
   text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+  color: white;
+  text-align: center;
+  display: block;
+  margin: 20px;
 }
 
-/* =========================
-   START SCREEN
-========================= */
+.title-link span {
+  color: #ffa502;
+}
 
-#start-screen {
-  width: 100%;
+/* CENTRAR */
+.center-screen {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
 
-.start-box {
-  background: #3b4554;
+/* CARD */
+.card {
+  background: #1e1e32;
   padding: 30px;
-  border-radius: 18px;
-  width: 100%;
-  max-width: 400px;
+  border-radius: 25px;
   text-align: center;
-}
-
-.start-box h2 {
-  margin-bottom: 20px;
 }
 
 /* INPUT */
-.start-box input {
+input {
   width: 100%;
-  padding: 12px;
+  padding: 15px;
   border-radius: 10px;
   border: none;
-  margin-bottom: 15px;
-  font-size: 16px;
+  margin: 20px 0;
+  font-size: 18px;
+  background: #28283d;
+  color: white;
 }
 
-/* BUTTON */
-.start-box button {
-  width: 100%;
-  padding: 12px;
+/* BOTÓN */
+.btn-primary {
+  background: linear-gradient(135deg, #ffcb8c, #ffa502);
   border: none;
-  border-radius: 10px;
-  background: #ffa502;
-  color: #2c3440;
+  padding: 15px;
+  border-radius: 30px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.start-box button:hover {
-  background: #ffbe33;
-}
-
-/* =========================
-   QUIZ
-========================= */
-
-#quiz {
   width: 100%;
-  max-width: 700px;
-  text-align: center;
 }
 
-/* PREGUNTA */
-#question {
-  margin-bottom: 20px;
+/* BOTONES RÁPIDOS */
+.quick-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-/* IMAGEN */
-#image {
-  width: 100%;
-  max-width: 400px;
-  margin: 20px auto;
-  display: block;
+.quick-buttons button {
+  flex: 1;
+  padding: 10px;
   border-radius: 10px;
+  border: none;
+  background: #28283d;
+  color: white;
+  cursor: pointer;
+}
+
+/* PROGRESO */
+.progress-box {
+  margin: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #333348;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  height: 100%;
+  background: #ffcb8c;
+  width: 0%;
 }
 
 /* OPCIONES */
-#options {
-  display: flex;
-  flex-direction: column;
+.options-grid {
+  display: grid;
   gap: 15px;
+  margin: 20px;
 }
 
-/* BOTONES DE OPCIÓN */
-#options button {
-  padding: 15px;
+.options-grid button {
+  background: #1e1e32;
   border: none;
-  border-radius: 12px;
-  background: #3b4554;
+  padding: 20px;
+  border-radius: 20px;
   color: white;
-  cursor: pointer;
-  transition: 0.2s;
   text-align: left;
-}
-
-/* HOVER SOLO SI NO ESTÁ BLOQUEADO */
-#options button:not(.locked):hover {
-  background: #4c5a6d;
-}
-
-/* =========================
-   RESPUESTAS
-========================= */
-
-/* CORRECTA */
-#options button.correct {
-  background: #22c55e !important;
-  color: black !important;
-}
-
-/* INCORRECTA */
-#options button.wrong {
-  background: #ef4444 !important;
-  color: white !important;
-}
-
-/* EVITAR QUE HOVER PISE LOS COLORES */
-#options button.correct:hover,
-#options button.wrong:hover {
-  background: inherit;
-}
-
-/* BLOQUEADO (después de responder) */
-#options button.locked {
-  cursor: default;
-}
-
-/* =========================
-   BOTÓN FINAL
-========================= */
-
-#restart-btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 10px;
-  background: #ffa502;
-  color: #2c3440;
-  font-weight: bold;
-  font-size: 15px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: 0.3s;
 }
 
-#restart-btn:hover {
-  background: #ffbe33;
-  transform: scale(1.05);
+.options-grid button:hover {
+  background: #28283d;
 }
 
-#restart-btn:active {
-  transform: scale(0.98);
+/* CORRECTO / INCORRECTO */
+.correct {
+  background: #00c896 !important;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-/* 📱 Tablets */
-@media (max-width: 900px) {
-  h1 {
-    font-size: 26px;
-  }
-
-  .start-box {
-    max-width: 100%;
-  }
-
-  #quiz {
-    max-width: 100%;
-  }
-}
-
-/* 📱 Celulares */
-@media (max-width: 480px) {
-
-  body {
-    padding: 30px 12px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  .start-box {
-    padding: 20px;
-  }
-
-  .start-box input {
-    font-size: 14px;
-  }
-
-  .start-box button {
-    font-size: 14px;
-  }
-
-  #options button {
-    padding: 12px;
-    font-size: 14px;
-  }
-}
-
-/* 📱 Muy pequeños */
-@media (max-width: 360px) {
-  h1 {
-    font-size: 20px;
-  }
-}
-
-/* 💻 Desktop grande */
-@media (min-width: 901px) {
-  body {
-    justify-content: center;
-  }
+.wrong {
+  background: #ff4d4d !important;
 }

@@ -1,36 +1,116 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="dark" lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú A1</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../tailwind-config.js"></script>
+
+<style>
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+h1,h2,h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+</style>
 </head>
-<body>
 
-  <div class="container">
-    <h1><span>P</span>REGUNTAS<span> L</span>ICENCIA <span>A</span>1</h1>
+<body class="bg-surface-container-lowest text-on-surface min-h-screen flex flex-col">
 
-    <div class="menu">
-      
-      <a href="../repaso-a1/index.html" class="card">
-        <h2>📚 Repaso</h2>
-        <p>
-          Elige la cantidad de preguntas que quieras practicar, 
-          desde 1 hasta 200. Ideal para estudiar a tu ritmo.
-        </p>
-      </a>
+<!-- NAVBAR -->
+<!-- <header class="flex justify-between items-center w-full px-6 py-4">
+  <a href="../menu/index.html" class="text-primary"><span class="text-xl font-bold italic text-primary-container">Simulacro A1</span></a> -->
 
-      <a href="../simulacro-a1/index.html" class="card">
-        <h2>🧠 Simulacro</h2>
-        <p>
-          Practica un examen real con 40 preguntas y 40 minutos,
-          igual que el examen oficial.
-        </p>
-      </a>
+  <!-- <div class="hidden md:flex items-center gap-8 text-on-surface-variant text-sm font-bold uppercase">
+    <a href="../menu/index.html" class="text-primary">Inicio</a>
+    <a href="../repaso-a1/index.html" class="hover:bg-surface-container px-3 py-1 rounded-lg transition">Práctica</a>
+    <a href="../simulacro-a1/index.html" class="hover:bg-surface-container px-3 py-1 rounded-lg transition">Simulacro</a>
+    <a href="#" class="hover:bg-surface-container px-3 py-1 rounded-lg transition">Perfil</a>
+  </div> -->
+<!-- 
+  <div class="flex gap-4">
+    <span class="material-symbols-outlined text-primary">notifications</span>
+    <span class="material-symbols-outlined text-primary">account_circle</span>
+  </div> -->
+</header>
 
-    </div>
+<!-- MAIN -->
+<main class="flex-grow flex items-center justify-center px-6 py-12">
+<div class="max-w-6xl w-full">
+
+<!-- HERO -->
+<div class="mb-12 text-center">
+  <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+    Domina el examen 
+    <span class="bg-gradient-to-r from-primary to-primary-container text-transparent bg-clip-text">
+      Licencia A1
+    </span>
+  </h1>
+  <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+Practica a tu ritmo o enfrenta un simulacro con tiempo real para medir tu nivel antes del examen. </p>
+</div>
+
+<!-- CARDS -->
+<div class="grid md:grid-cols-2 gap-8">
+
+<!-- REPASO -->
+<div class="bg-surface-container-low p-10 rounded-[2rem] hover:-translate-y-2 transition-all duration-200">
+  <div class="mb-6 text-tertiary">
+    <span class="material-symbols-outlined text-4xl">menu_book</span>
   </div>
+
+  <h2 class="text-2xl font-bold mb-2">Repaso</h2>
+  <p class="text-on-surface-variant mb-8">
+    Elige cuántas preguntas quieres resolver (hasta 200) y practica a tu ritmo. Cada respuesta correcta te permite avanzar y seguir aprendiendo.
+  </p>
+
+  <a href="../repaso-a1/index.html"
+     class="inline-flex items-center gap-2 px-6 py-3 bg-surface-container-highest rounded-full font-bold hover:bg-surface-container transition">
+    Empezar Práctica
+    <span class="material-symbols-outlined">arrow_forward</span>
+  </a>
+</div>
+
+<!-- SIMULACRO -->
+<div class="bg-surface-container p-10 rounded-[2rem] hover:-translate-y-2 transition-all duration-200">
+  <div class="mb-6 text-primary-container">
+    <span class="material-symbols-outlined text-4xl">timer</span>
+  </div>
+
+  <h2 class="text-2xl font-bold mb-2">Simulacro</h2>
+  <p class="text-on-surface-variant mb-8">
+    Resuelve un examen de 40 preguntas en 40 minutos y mide tu nivel en una experiencia similar al examen real. Necesitas al menos 35 respuestas correctas para aprobar.
+  </p>
+
+  <a href="../simulacro-a1/index.html"
+     class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-primary-container text-black font-bold rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-primary-container/30 active:scale-95">
+    Iniciar Examen
+    <span class="material-symbols-outlined">bolt</span>
+  </a>
+</div>
+
+</div>
+
+</div>
+</main>
+
+<!-- MOBILE NAV -->
+<!-- <nav class="md:hidden fixed bottom-6 left-0 right-0 flex justify-around bg-surface-container-highest/70 backdrop-blur-xl w-[90%] mx-auto rounded-full py-2 text-on-surface-variant">
+  <a href="../menu/index.html" class="text-primary">Inicio</a>
+  <a href="../repaso-a1/index.html">Práctica</a>
+  <a href="../simulacro-a1/index.html">Simulacro</a>
+  <a href="#">Perfil</a>
+</nav> -->
 
 </body>
 </html>
